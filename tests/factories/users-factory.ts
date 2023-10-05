@@ -12,3 +12,14 @@ export async function insertUser() {
         }
     })
 }
+
+export async function mockUser() {
+    return {
+        id: faker.number.int(),
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
+        email: faker.internet.email(),
+        cpf: faker.internet.ipv4().replace(/\.$/g, ''),
+        birthDate: faker.date.birthdate()
+    }
+}
